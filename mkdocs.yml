@@ -1,0 +1,69 @@
+site_name: Intel Wireless
+site_url: https://intel.github.io/Intel-wireless/
+site_description: Integration guides for Intel Wi-Fi on non-x86 platforms
+
+repo_url: https://github.com/intel/Intel-wireless
+repo_name: intel/Intel-wireless
+
+theme:
+  name: material
+  features:
+    - navigation.sections       # Left sidebar collapsible sections
+    - navigation.expand         # Auto-expand sidebar sections
+    - navigation.indexes        # Section index pages
+    - navigation.top            # Back-to-top button
+    - search.suggest            # Search suggestions
+    - search.highlight          # Highlight matches in results
+    - content.code.copy         # Copy button on code blocks
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# Right sidebar - "On This Page" table of contents
+markdown_extensions:
+  - toc:
+      permalink: true           # Anchor links on headings
+  - pymdownx.highlight:         # Code syntax highlighting
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences        # Fenced code blocks
+  - pymdownx.tabbed:            # Tabbed content
+      alternate_style: true
+  - admonition                  # Note/warning/tip boxes
+  - pymdownx.details            # Collapsible admonitions
+
+plugins:
+  - search                      # Built-in instant search
+
+# Left sidebar navigation tree
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Hardware Requirements: getting-started/hardware-requirements.md
+    - Hardware Verification: getting-started/hardware-verification.md
+  - Build the Driver:
+    - Overview: build/index.md
+    - Native Build from Source: build/native-build.md
+    - Cross-Compilation: build/cross-compile.md
+  - Firmware:
+    - Installation: firmware/installation.md
+  - Platform Guides:
+    - Canonical Ubuntu (DKMS): platforms/canonical-ubuntu.md
+    - NVIDIA Jetson: platforms/jetson/index.md
+  - Configuration:
+    - Wi-Fi Configuration: configuration/index.md
+  - Troubleshooting:
+    - Debugging Guide: troubleshooting/index.md
+    - FAQ: troubleshooting/faq.md
