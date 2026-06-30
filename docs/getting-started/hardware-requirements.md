@@ -26,6 +26,8 @@ sudo lspci -vvv
 
 The output indicates MSI-X capability as `Enable+`.
 
+![MSI-X lspci output](../assets/images/msix-lspci-output.png)
+
 ### Supported Control of PCIe De-emphasis
 
 In PCIe Gen2, it is recommended to disable PCIe de-emphasis implemented in the Intel® Wi-Fi module. This configuration helps prevent PCIe device enumeration issues.

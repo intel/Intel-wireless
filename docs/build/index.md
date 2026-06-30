@@ -8,8 +8,7 @@ Intel® Wi-Fi is natively supported in Linux. Intel upstreams the Wi-Fi driver k
 
 The backport driver can be compatible with multiple kernel versions and tested against recent long-term kernel versions.
 
-!!! todo "Suggested Addition: Software Stack Diagram"
-    The original document references a diagram showing the software stack components. Consider creating an architecture diagram (Mermaid or image) showing the relationship between userspace tools, mac80211/cfg80211, compat, iwlwifi/iwlmld/iwlmvm, and firmware.
+![Software stack for backport driver](../assets/images/software-stack-diagram.png)
 
 ### Tool and Daemon Components
 
@@ -28,6 +27,12 @@ These components include Wi-Fi framework — `mac80211.ko` and `cfg80211.ko`, ba
 ### Intel Firmware Components
 
 These components include Wi-Fi firmware — `*.ucode` and regulatory supported file `*.pnvm`.
+
+## Intel® Wi-Fi Integration
+
+This section describes the recommended workflow for enabling and integrating Intel® Wi-Fi on the target platform.
+
+![Integration workflow](../assets/images/integration-workflow.png)
 
 ## Build Methods
 

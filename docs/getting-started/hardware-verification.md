@@ -16,6 +16,8 @@ Here is example output:
 6e:00.0 Network controller: Intel Corporation Device 2725
 ```
 
+![PCIe detection output](../assets/images/pcie-detection-output.png)
+
 - `6e:00.0` — This is the BDF (Bus, Device, Function) node of your PCIe bus.
 - `8086` — This is the Intel Vendor ID.
 - `2725` — This is the device ID of Intel® Wi-Fi that you use. The example 0x2725 is the device id of AX210.

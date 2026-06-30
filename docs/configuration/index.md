@@ -1,4 +1,4 @@
-# Guidance for Wi-Fi Configuration Enablement
+# Wi-Fi Configuration Enablement
 
 Certain Intel® Wi-Fi features require platform-specific settings in addition to the standard driver and firmware package. These settings may be used to control Wi-Fi device features and platform-specific features, including settings required for regulatory compliance. The method used to deliver these settings depends on the firmware architecture of the target platform.
 
@@ -12,49 +12,4 @@ Platform-specific Wi-Fi settings may be delivered through different platform con
 
 **Device tree** — provides platform configuration data as part of the hardware description passed during boot. For device tree, integrity typically relies on the device tree blob being included in a protected platform image and covered by the platform boot flow.
 
-For Intel® Wi-Fi over PCIe, the recommended order is UEFI variables first, ACPI methods second, and device tree only as a fallback when neither UEFI nor ACPI is available.
-
-## Enable Configuration in Non-x86
-
-On modern boot loaders used in non-x86 platforms, only the UEFI variable and device tree methods are supported. To enable these configuration methods on non-x86 platforms, NDA customers must contact Intel through the Intel Premier Support portal.
-
-## Device Specific Configuration for Wi-Fi
-
-### Intel® Sample File Code
-
-`OemWifiDsm.ASL`
-
-**Object Location:** Wi-Fi PCIe device scope
-
-**Method Description:** This function supports a variety of device-specific features modes and configurations of the Intel® Wi-Fi Device over different operating systems and Platforms. The OEM defines the specific configuration per platform using the Device-Specific Method (_DSM), which can be included under a Wi-Fi ACPI namespace.
-
-### DSM GUID and Parameters
-
-| Field | Description | Expected Value | Format |
-|-------|-------------|----------------|--------|
-| GUID | The GUID for the Wi-Fi Device | {F21202BF-8F78-4DC6-A5B3-1F738E285ADE} | GUID (16 bytes) |
-| Revision | The function's revision | 0 | DWordConst |
-| Function Index | 0–31 | Refer to DSM Functions table below | — |
-
-### DSM Revision 0 Functions
-
-| Func. Index | Function Name | Description | Supported NIC | Supported OS | Expected Values (Bold: default) | Format |
-|-------------|---------------|-------------|---------------|--------------|----------------------------------|--------|
-| 0 | Get supported functions | Reserved to DSM specification. Function 0 of every _DSM is a query function that returns the set of supported function indexes and is always required. For the definition of Function 0, refer to section "_DSM (Device Specific Method)" in the ACPI specification. | From HrPx | Windows/Linux/ChromeOS/AluminumOS | Bits [0–31]. Bit 0 indicates whether there is support for any functions other than function 0 for the specified UUID and Revision ID. If set to zero, no functions are supported. | DWORD (UINT32) |
-| 1 | Disable SRD Active Channels | Allow PC OEMs to set ETSI 5.8GHz SRD in Passive/Disabled. ETSI SRD Channels: 149, 153, 157, 161, 165 | From HrPx | Windows/Linux/ChromeOS/AluminumOS | **0** – ETSI 5.8GHz SRD active scan, 1 – ETSI 5.8GHz SRD passive scan, 2 – ETSI 5.8GHz SRD disabled | BYTE (UINT8) |
-| 2 | Supported Indonesia 5.15-5.35 GHz band | Opening of 5.15-5.35 GHz band in Indonesia. Indonesia authority (SDPPI) made changes to their type approval process. | From HrPx | Windows/Linux/ChromeOS/AluminumOS | **0** – Set 5.15-5.35GHz to Disable in Indonesia, 1 – Set 5.15–5.35GHz to Enable (Passive) in Indonesia, 2 – Reserved | BYTE (UINT8) |
-| 3 | Supported Ultra High Band Channels (6-7 GHz) | Support Wi-Fi 6 new channels on 6-7 GHz. | From TyP, GfPx | Windows/Linux/ChromeOS/AluminumOS | **00** – UHB NIC Definitions | DWORD (UINT32) |
-| 4 | Regulatory Configurations | Regulatory Special Configurations Enablements. Bit 0: Enabling DRS for China Mainland Location (NON CHINA SKU only; ignored if CHINA_SKU defined in BIOS WRDD). Bit 1: Enabling China Mainland BIOS (CB) profile 5.2GHz Active Scan/SoftAP override on indoor confirmation. Bit 2: Enabling New China Mainland Regulatory Specification (0=Old, 1=New). Bit 3–31: Reserved. | From HrPx | Windows/Linux/ChromeOS/AluminumOS | **00** – OTP Nic Configuration | DWORD (UINT32) |
-| 6 | 11ax Enablement | Control Enablement 11ax on certificated modules | From HrPx (till GaP/FmP2) | Windows/Linux/ChromeOS/AluminumOS | **0x0** – NIC default values | DWORD (UINT32) |
-| 7 | U-NII-4 | Control Enablement U-NII-4 over certificate modules. Note: For FCC(US), ETSI and Canada support is till GaP2, Fmp2 only. | From GfP2/GfP4/TyP | Windows/Linux/ChromeOS/AluminumOS | **0x0** – NIC default values | DWORD (UINT32) |
-| 8 | Device for Indoor Use Only | Enable Soft AP mode indoors bands (5.150 to 5.250GHz) per country or region. | From GfP2/GfP4/TyP | Windows/Linux/ChromeOS/AluminumOS | **0x0** – NIC default values | DWORD (UINT32) |
-| 9 | Selectively WiFi Bands | Ability to force disable selectively Wi-Fi bands per platform | From MTL HrPx | Windows/Linux/ChromeOS/AluminumOS | **0x0** – NIC default values | DWORD (UINT32) |
-| 10 | Energy Detection Threshold (EDT) | Perform energy detection correctly in platforms with low antenna Gains (per sub-band) for compliance purposes | From MTL GfP2/GfP4/TyP | Windows/Linux/ChromeOS/AluminumOS | **0x0** – NIC default values | DWORD (UINT32) |
-| 11 | RFI Mitigation Enablement | Ability to enable/disable the DLVR and DDR RFI mitigation feature | From MTL GfP2/GfP4 (CNVi only) | Windows/Linux/ChromeOS/AluminumOS | **0x0** – DRR & DLVR RFIm enabled | DWORD (UINT32) |
-| 12 | 11be enablement | Ability to Enable 11be per MCC (as defined by the OEM). Note: For South Korea and China Mainland support is till GaP2, Fmp2 only. | From GaP2 | Windows/Linux/ChromeOS/AluminumOS | **00** – 11be disabled per MCC | DWORD (UINT32) |
-
-!!! todo "Suggested Addition: ASL Code Example"
-    Consider including a sample _DSM ASL implementation snippet showing how to implement one or two functions (e.g., Function 1 — Disable SRD) in an OEM's ACPI table for non-x86 platforms.
-
-!!! todo "Suggested Addition: Device Tree Configuration Example"
-    Consider adding a Device Tree binding example for platforms that use DT instead of ACPI, showing how the equivalent configuration properties are expressed.
+For the details regarding data structure and how to adapt for each configuration method, please reach out Intel.

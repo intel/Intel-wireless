@@ -31,7 +31,8 @@ Intel-wireless/
 │   │   ├── canonical-ubuntu.md    #   DKMS-based installation
 │   │   └── jetson/                #   NVIDIA Jetson specifics
 │   ├── configuration/             # UEFI, ACPI, Device Tree settings
-│   └── troubleshooting/           # Debugging, log collection, FAQ
+│   ├── troubleshooting/           # Debugging, log collection, FAQ
+│   └── releases/                  # Release notes per signed build
 ├── patches/                       # Platform-specific patches (planned)
 ├── scripts/                       # Build helpers (planned)
 ├── mkdocs.yml                     # MkDocs site configuration

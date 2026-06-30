@@ -2,7 +2,7 @@
 
 ## Request Intel's Support
 
-Intel provides official support to NDA customers. Requests for assistance must be submitted through an Intel Support Forum ticket that includes the following information:
+Intel provides official. Requests for assistance must be submitted through an Intel support forum that includes the following information:
 
 - Issue symptoms
 - Issue reproduction steps

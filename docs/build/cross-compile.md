@@ -4,7 +4,7 @@ On non-x86 platforms, building the driver natively may not be practical due to l
 
 ## Step 1: Kernel Preparation - ok - this is my change
 
-Before building out-of-tree modules, the target platform's kernel source must be configured and minimally prepared on the host. This generates the headers, build scripts, and `Module.symvers` required for external module compilation. Contact the SoC vendor to understand necessary steps for kernel preparation.
+Before building out-of-tree modules, the target platform's kernel source must be configured and minimally prepared on the host. This generates the headers, build scripts, and `Module.symvers` required for external module compilation. Contact the SoC vendor to understand steps for kernel preparation.
 
 Following is an example using NVIDIA Jetson — Orin/Thor platform:
 

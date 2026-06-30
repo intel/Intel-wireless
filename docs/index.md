@@ -27,7 +27,7 @@ Intel and the Intel logo are trademarks of Intel Corporation in the U.S. and/or 
 
 ### Scope of The Document
 
-This document provides guidance for integrating Intel® Wi-Fi solutions on non-x86 platforms. It covers hardware considerations, software integration, platform configuration, and certification requirements. This document is intended for system architects and software engineers who are responsible for integrating Intel® Wi-Fi modules into non-x86 SoC platforms. Validation results and platform-specific reference designs are out of scope for this document.
+This document provides guidance for integrating Intel® Wi-Fi solutions on non-x86 platforms. It covers hardware considerations, software integration, platform configuration, and certification requirements. This document is intended  integrating Intel® Wi-Fi modules into non-x86 SoC platforms.
 
 ### Hardware Support Scope
 
