@@ -19,13 +19,3 @@ After installation, reboot the platform. DKMS will automatically build the drive
 
 !!! note
     This method also installs the required firmware via the `linux-firmware` package. No additional firmware installation steps are needed.
-
-## Wi-Fi Daemon and Tool Integration
-
-The components used in this phase are not provided or maintained by Intel. Refer to the following open-source community websites for details:
-
-| Name | Purpose | Open-Source Community Website |
-|------|---------|-------------------------------|
-| wpa_supplicant | Daemon for controlling Wi-Fi in STA mode | [Documentation](https://wireless.docs.kernel.org/en/latest/en/users/documentation/wpa_supplicant.html) |
-| hostapd | Daemon for controlling Wi-Fi in soft access point mode | [Documentation](https://wireless.docs.kernel.org/en/latest/en/users/documentation/hostapd.html) |
-| iw tool | Tool for query and control Wi-Fi settings | [Documentation](https://wireless.docs.kernel.org/en/latest/en/users/documentation/iw.html) |

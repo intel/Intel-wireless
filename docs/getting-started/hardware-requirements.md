@@ -9,26 +9,16 @@ Please consult your SoC/platform vendor for the information about PCIe root comp
 ### PCIe Root Complex Capabilities Summary
 
 | Capability | AX210 | BE200 |
-|-----------|-------|-------|
-| MSI-X Interrupt | Required | Required |
-| PCIe de-emphasis control | Required | Required |
-| PCIe relaxed ordering control | Required | Required |
-| 5-Bit tags | Required | Required |
-| Disable No Snoop | — | Required |
+|-----------|:-----:|:-----:|
+| MSI-X Interrupt | ✓ | ✓ |
+| PCIe de-emphasis control | ✓ | ✓ |
+| PCIe relaxed ordering control | ✓ | ✓ |
+| 5-Bit tags | ✓ | ✓ |
+| Disable No Snoop | — | ✓ |
 
 ### MSI‑X Interrupt Support
 
 Intel® Wi-Fi uses PCIe MSI-X (Message Signaled Interrupts Extended) for IRQ handling. The driver implementation does not support legacy line‑based interrupts. In PCIe Gen2, MSI‑X is an optional feature of the standard.
-
-To verify this PCIe capability, check the platform using the following command:
-
-```bash
-sudo lspci -vvv
-```
-
-The output indicates MSI-X capability as `Enable+`.
-
-![MSI-X lspci output](../assets/images/msix-lspci-output.png)
 
 ### PCIe De‑emphasis Control
 

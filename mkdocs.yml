@@ -12,6 +12,7 @@ theme:
     - navigation.expand         # Auto-expand sidebar sections
     - navigation.indexes        # Section index pages
     - navigation.top            # Back-to-top button
+    - navigation.footer         # Previous/Next page links at bottom
     - search.suggest            # Search suggestions
     - search.highlight          # Highlight matches in results
     - content.code.copy         # Copy button on code blocks
@@ -50,10 +51,8 @@ plugins:
 # Left sidebar navigation tree
 nav:
   - Home: index.md
-  - Getting Started:
-    - Hardware Requirements: getting-started/hardware-requirements.md
-    - Hardware Verification: getting-started/hardware-verification.md
-  - Build the Driver:
+  - Hardware Requirements: getting-started/hardware-requirements.md
+  - Integration Guide:
     - Overview: build/index.md
     - Native Build from Source: build/native-build.md
     - Cross-Compilation: build/cross-compile.md
