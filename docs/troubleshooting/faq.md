@@ -1,8 +1,8 @@
 # Frequently Asked Questions (FAQ)
 
-## Q: When I use cross-compiling backport driver, it shows error in kconf components: `./kconf/conf: 1: Syntax error: "(" unexpected`. What happened?
+## Q: Why does cross-compiling the backport driver produce the following kconf error: `./kconf/conf: 1: Syntax error: "(" unexpected`. What is the cause and resolution?
 
-In several non-x86 SoC SDKs which are based on Poky/Yocto, it is necessary to run the required steps to set up the cross-compilation environment. Those steps overwrite important Makefile variables. This causes the failure of compiling kconf component in host machine. To resolve the problem, unset those environment variables:
+In several non-x86 SoC SDKs that are based on Poky/Yocto, it is necessary to run the required steps to set up the cross-compilation environment. Those steps overwrite important Makefile variables. This causes the compilation of the kconf component to fail in the host machine. To resolve the problem, unset those environment variables:
 
 ```bash
 unset CC CXX LD CFLAGS CXXFLAGS LDFLAGS

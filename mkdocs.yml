@@ -59,11 +59,10 @@ nav:
     - Cross-Compilation: build/cross-compile.md
   - Firmware:
     - Installation: firmware/installation.md
-  - Platform Guides:
-    - Canonical Ubuntu (DKMS): platforms/canonical-ubuntu.md
+  - Platform-Specific Guidance:
     - NVIDIA Jetson: platforms/jetson/index.md
-  - Configuration:
-    - Wi-Fi Configuration: configuration/index.md
+    - Canonical Ubuntu (DKMS): platforms/canonical-ubuntu.md
+  - Wi-Fi Configuration: configuration/index.md
   - Troubleshooting:
     - Debugging Guide: troubleshooting/index.md
     - FAQ: troubleshooting/faq.md

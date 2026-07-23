@@ -1,14 +1,14 @@
-# NVIDIA Jetson
+# Guidance for NVIDIA Jetson Platforms
 
 This guide covers Intel® Wi-Fi integration on NVIDIA Jetson platforms (AGX Orin, Orin Nano, Thor) running JetPack.
 
 ## Recommended: DKMS Installation
 
-For Jetson platforms running Canonical Ubuntu (JetPack 5.x or 6.x), the DKMS-based installation is the recommended approach. Follow the instructions in [Platform Guides → Canonical Ubuntu](../canonical-ubuntu.md).
+For Jetson platforms running Canonical Ubuntu (JetPack 5.x or 6.x), the DKMS-based installation is the recommended approach. Follow the instructions in [Canonical Ubuntu](../canonical-ubuntu.md).
 
 ## Cross-Compilation for Jetson
 
-If building from source on an x86 host for Jetson, refer to the [Cross-Compilation](../../build/cross-compile.md) guide. The following Jetson-specific details apply:
+If building from source on an x86 host for Jetson, refer to the [Cross-Compilation](../../build/cross-compile.md) guide. The following Jetson‑specific details apply.
 
 ### Kernel Preparation
 
@@ -37,6 +37,3 @@ depmod -a -b <jetson rootfs> <kernel version>
 ```
 
 For firmware installation, refer to the [Firmware Installation](../../firmware/installation.md) page.
-
-!!! todo "Suggested Addition: Jetson-Specific PCIe / Device Tree Notes"
-    Consider adding Jetson-specific notes on PCIe slot availability per carrier board, and any Device Tree overlay needed to enable the M.2 E-key slot on boards where it is not enabled by default.

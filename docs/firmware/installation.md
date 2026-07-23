@@ -4,7 +4,7 @@ This section applies to the "Native Build from Source" and "Cross-Compilation fr
 
 ## Deploy Firmware Files
 
-Intel® Wi-Fi firmware files must be placed in `/lib/firmware/` on the target filesystem. To deploy firmware, follow the commands below:
+Intel® Wi-Fi firmware files must be placed in `/lib/firmware/` on the target filesystem. To deploy firmware, run the following commands:
 
 ```bash
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
@@ -23,6 +23,3 @@ Where `<target firmware path>` is the firmware folder in rootfs (typically `/lib
 |-------------|---------|
 | `iwlwifi-*.ucode` | Wi-Fi firmware binary |
 | `*.pnvm` | Regulatory configuration data |
-
-!!! todo "Suggested Addition: Firmware Version Matrix"
-    Consider adding a compatibility matrix showing which firmware versions are validated with which driver releases and Wi-Fi modules (BE200, AX210).

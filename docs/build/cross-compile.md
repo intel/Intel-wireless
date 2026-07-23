@@ -1,12 +1,12 @@
-# Build Method: Cross-Compilation from Source
+# Build Method 2: Cross-Compilation from Source
 
 On non-x86 platforms, building the driver natively may not be practical due to limited resources, missing development tools, or the use of a vendor-customized kernel that requires cross-compilation. In these cases, cross-compiling from an x86 host is the recommended approach.
 
-## Step 1: Kernel Preparation - ok - this is my change
+## Step 1: Kernel Preparation
 
-Before building out-of-tree modules, the target platform's kernel source must be configured and minimally prepared on the host. This generates the headers, build scripts, and `Module.symvers` required for external module compilation. Contact the SoC vendor to understand steps for kernel preparation.
+Before building out-of-tree modules, the target platform's kernel source must be configured and minimally prepared on the host. This generates the headers, build scripts, and `Module.symvers` required for external module compilation. Contact the SoC/platform vendor to understand the necessary steps for kernel preparation.
 
-Following is an example using NVIDIA Jetson — Orin/Thor platform:
+The following are example commands for NVIDIA Jetson platforms — Orin/Thor platforms:
 
 ```bash
 make ARCH=<arch> CROSS_COMPILE=<path to toolchain prefix> tegra_defconfig
@@ -22,13 +22,13 @@ make ARCH=<arch> CROSS_COMPILE=<path to toolchain prefix> modules_prepare
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
 cd backport-iwlwifi
 make ARCH=<arch> KLIB_BUILD=<path to the kernel source> defconfig-iwlwifi-public
-make ARCH=<arch> KLIB_BUILD=<path to the kernel source> CROSS_COMPILE=<path to toolchain> -docs/firmwarej<number of threads>
+make ARCH=<arch> KLIB_BUILD=<path to the kernel source> CROSS_COMPILE=<path to toolchain> -j$(nproc)
 ```
 
 Where:
 
 - `<arch>` — the symbol for the target processor. For example: `arm64`.
-- `<path to the kernel source>` — path for Linux kernel source.
+- `<path to the kernel source>` — path to Linux kernel source.
 - `<path to toolchain>` — path and cross compile prefix in toolchain.
 
 !!! note "Selecting a Release"
@@ -47,7 +47,7 @@ Where:
 
 - `<target kernel module path>` — kernel module folder for generated rootfs.
 - `<version>` — kernel version string for target platform.
-- `<target rootfs path>` — path for target root file system.
+- `<target rootfs path>` — path to the target root file system.
 
 ## Firmware
 

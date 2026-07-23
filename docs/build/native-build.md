@@ -1,10 +1,10 @@
-# Build Method: Native Build from Source
+# Build Method 1: Native Build from Source
 
-This method involves compiling the backport driver from source directly on the target platform. It provides more flexibility and is suitable for platforms running a vendor-customized Linux kernel where the DKMS package may not be available.
+This method involves compiling the backport driver from the source directly onto the target platform. It provides more flexibility and is suitable for platforms running a vendor-customized Linux kernel where the DKMS package may not be available.
 
 ## Clone and Build
 
-To clone and build the driver, run the following commands:
+To clone and build the driver, run these commands:
 
 ```bash
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
@@ -18,7 +18,7 @@ make -j$(nproc)
 
 ## Install
 
-Once the build completes successfully, install the driver modules and update module dependencies:
+Once the build completes successfully, install the driver modules and update module dependencies by running these commands:
 
 ```bash
 sudo make install

@@ -1,10 +1,10 @@
-# Wi-Fi Configuration Enablement
+# Wi-Fi Configuration
 
 Certain Intel® Wi-Fi features require platform-specific settings in addition to the standard driver and firmware package. These settings may be used to control Wi-Fi device features and platform-specific features, including settings required for regulatory compliance. The method used to deliver these settings depends on the firmware architecture of the target platform.
 
 ## Configuration Methods
 
-Platform-specific Wi-Fi settings may be delivered through different platform configuration methods, depending on the system firmware architecture. Intel modules support, or are planned to support, three configuration methods:
+Platform-specific Wi-Fi settings may be delivered through different platform configuration methods, depending on the system firmware architecture. Intel modules support the following three configuration methods:
 
 **UEFI variables** — firmware-provided configuration values that are accessible to software through standard UEFI services. For UEFI, integrity typically relies on firmware-enforced protection of the relevant variables, either individually or through a variable policy applied to the associated GUID namespace.
 
@@ -12,4 +12,4 @@ Platform-specific Wi-Fi settings may be delivered through different platform con
 
 **Device tree** — provides platform configuration data as part of the hardware description passed during boot. For device tree, integrity typically relies on the device tree blob being included in a protected platform image and covered by the platform boot flow.
 
-For the details regarding data structure and how to adapt for each configuration method, please reach out Intel.
+For details regarding data structure and how to adapt for each configuration method, please contact Intel via our Online Service Request.

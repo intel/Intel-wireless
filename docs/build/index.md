@@ -1,18 +1,18 @@
 # Guidance for Software Integration
 
-## About Driver and Firmware
+## Driver and Firmware Overview
 
-Intel® Wi-Fi is natively supported in Linux. Intel upstreams the Wi-Fi driver kernel source tree to kernel.org. Customers can use it to enable Intel® Wi-Fi without any extra effort. Intel also upstreams the driver called backport driver to kernel.org. This approach benefits customers who require support for newer driver features on older kernel versions. This section provides guidance on how to integrate the Intel® Wi-Fi backport driver.
+Intel® Wi-Fi is natively supported in Linux. Intel upstreams the Wi-Fi driver kernel source tree to kernel.org., making it easy for customers to enable Intel® Wi-Fi. Intel also maintains an upstream backport driver to kernel.org. This approach benefits customers who require support for newer driver features on older kernel versions. This section provides guidance on how to integrate the Intel® Wi-Fi backport driver.
 
-## Software Stack for Backport Driver
+## Software Stack for the Backport Driver
 
 The backport driver can be compatible with multiple kernel versions and tested against recent long-term kernel versions.
 
 ![Software stack for backport driver](../assets/images/software-stack-diagram.png)
 
-### Tool and Daemon Components
+### User-Space Tool and Daemon Components
 
-These components include wireless tool (iw tool), client daemon (wpa_supplicant) and AP daemon (hostapd). These components are not maintained by Intel and fully leverage components from the open-source community.
+These components include the wireless tool (iw tool), client daemon (wpa_supplicant) and AP daemon (hostapd). These components are not maintained by Intel and fully leverage components from the open-source community.
 
 | Name | Purpose | Open-Source Community Website |
 |------|---------|-------------------------------|
@@ -22,11 +22,11 @@ These components include wireless tool (iw tool), client daemon (wpa_supplicant)
 
 ### Intel Driver Components
 
-These components include Wi-Fi framework — `mac80211.ko` and `cfg80211.ko`, backport driver abstraction layer — `compat.ko`, and Intel driver implementation — `iwlwifi.ko`, `iwlmld.ko` and `iwlmvm.ko`.
+These components include the Wi-Fi frameworks — `mac80211.ko` and `cfg80211.ko`, backport driver abstraction layer — `compat.ko`, and Intel driver implementation — `iwlwifi.ko`, `iwlmld.ko` and `iwlmvm.ko`.
 
-### Intel Firmware Components
+### Intel® Firmware Components
 
-These components include Wi-Fi firmware — `*.ucode` and regulatory supported file `*.pnvm`.
+These components include the Wi-Fi firmware — `*.ucode` and regulatory support file `*.pnvm`.
 
 ## Intel® Wi-Fi Integration
 
@@ -35,9 +35,6 @@ This section describes the recommended workflow for enabling and integrating Int
 ![Integration workflow](../assets/images/integration-workflow.png)
 
 ## Build Methods
-
-!!! tip "Building for Canonical Ubuntu or NVIDIA Jetson?"
-    If your platform runs Canonical Ubuntu (including NVIDIA Jetson with JetPack), the recommended approach is the DKMS-based installation. See [Platform Guides → Canonical Ubuntu](../platforms/canonical-ubuntu.md) for the simplest path.
 
 Choose the build method that best fits your platform:
 
@@ -48,7 +45,7 @@ Choose the build method that best fits your platform:
 
 ## Installing Prerequisites
 
-Building the backport driver requires standard Linux kernel build tools: a C compiler, `make`, `flex`, `bison`, `bc`, and kernel header/crypto development libraries. Ensure these tools are installed on the machine performing the build — either the target platform (for native builds) or the x86 host (for cross-compilation).
+Building the backport driver requires standard Linux kernel build tools: a C compiler, `make`, `flex`, `bison`, `bc`, and kernel header/crypto development libraries. Ensure these tools are installed on the build system — either the target platform (for native builds) or the x86 host (for cross-compilation).
 
 For cross-compilation, a toolchain for the target architecture is also required.
 

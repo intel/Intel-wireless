@@ -1,7 +1,4 @@
-# Guidance for Integrating Intel® Wi-Fi into Non-x86 Platforms
-
-!!! todo "Review: Legal Boilerplate"
-    The legal notices below are kept from the original document. These need to be reviewed before public release — determine what to keep, modify, or remove for the open-source GitHub Pages site.
+# Guidance for Integrating Intel® Wi‑Fi into Non‑x86 Platforms
 
 ## Legal Notices
 
@@ -27,27 +24,24 @@ Intel and the Intel logo are trademarks of Intel Corporation in the U.S. and/or 
 
 ### Scope of The Document
 
-This document provides guidance for integrating Intel® Wi-Fi solutions on non-x86 platforms. It covers hardware considerations, software integration, platform configuration, and certification requirements. This document is intended  integrating Intel® Wi-Fi modules into non-x86 SoC platforms.
+This document provides guidance for integrating Intel® Wi-Fi solutions on non-x86 platforms. It covers hardware considerations, software integration, platform configuration, and certification requirements. This document is intended to help customers integrate Intel® Wi-Fi modules into non-x86 SoC platforms.
 
 ### Hardware Support Scope
 
-The scope includes Intel® Wi-Fi discrete solution based on standard PCIe.
+The scope includes Intel® Wi-Fi discrete solutions based on standard PCIe.
 
 - Intel® Wi-Fi 7 BE200
 - Intel® Wi-Fi 6E AX210
 
 ### Software Support Scope
 
-The scope includes Linux-based operating systems. Intel provided the Wi-Fi driver and firmware for customers to integrate. But Intel is not responsible for maintaining the Linux kernel and changes for specific platforms.
+The scope includes Linux-based operating systems. Intel provides the Wi-Fi driver and firmware for customers to integrate. However, Intel is not responsible for maintaining the Linux kernel or making changes for specific platforms.
 
 ## Quick Links
 
-- [Hardware Considerations](getting-started/hardware-requirements.md) — PCIe Root Complex requirements
+- [Hardware Requirements](getting-started/hardware-requirements.md) — PCIe Root Complex considerations
 - [Build the Driver](build/index.md) — Native build or cross-compilation from source
 - [Firmware Installation](firmware/installation.md) — Deploy firmware to target
-- [Platform Guides](platforms/canonical-ubuntu.md) — DKMS for Canonical Ubuntu, NVIDIA Jetson
+- [Platform Guides](platforms/jetson/index.md) — NVIDIA Jetson, Canonical Ubuntu (DKMS)
 - [Wi-Fi Configuration](configuration/index.md) — UEFI, ACPI, and Device Tree settings
 - [Debugging](troubleshooting/index.md) — Log collection and support
-
-!!! todo "Suggested Addition: Getting Started Quickstart"
-    Consider adding a quickstart flowchart page that walks through the recommended workflow: hardware verification → choose build method → firmware → configuration → test connectivity. The docx has a "high-level flow diagram" reference but no actual diagram content was embedded.

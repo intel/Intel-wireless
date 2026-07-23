@@ -11,11 +11,11 @@ Full documentation is available at: **[intel.github.io/Intel-wireless](https://i
 
 ## Topics Covered
 
-- **Hardware Considerations** — PCIe Root Complex requirements (MSI-X, de-emphasis, relaxed ordering, tags, NoSnoop)
-- **Driver Build Methods** — Native build from source, cross-compilation, and DKMS for Ubuntu
+- **Hardware Requirements** — PCIe Root Complex considerations (MSI-X, de-emphasis, relaxed ordering, tags, No Snoop)
+- **Driver Build Methods** — Native build from source and cross-compilation
 - **Firmware Installation** — Deploying `*.ucode` and `*.pnvm` files to the target
-- **Platform Guides** — Canonical Ubuntu (DKMS), NVIDIA Jetson (Orin, Thor)
-- **Configuration** — UEFI variables, ACPI _DSM methods, Device Tree bindings
+- **Platform-Specific Guidance** — NVIDIA Jetson (Orin, Thor), Canonical Ubuntu (DKMS)
+- **Wi-Fi Configuration** — UEFI variables, ACPI methods, Device Tree
 - **Troubleshooting** — Driver and firmware log collection, FAQ
 
 ## Repository Structure
@@ -27,14 +27,13 @@ Intel-wireless/
 │   ├── getting-started/           # Hardware requirements & verification
 │   ├── build/                     # Native build, cross-compilation
 │   ├── firmware/                  # Firmware installation
-│   ├── platforms/                 # Per-platform guides
-│   │   ├── canonical-ubuntu.md    #   DKMS-based installation
-│   │   └── jetson/                #   NVIDIA Jetson specifics
-│   ├── configuration/             # UEFI, ACPI, Device Tree settings
+│   ├── platforms/                 # Platform-specific guides
+│   │   ├── jetson/                #   NVIDIA Jetson specifics
+│   │   └── canonical-ubuntu.md    #   DKMS-based installation
+│   ├── configuration/             # Wi-Fi configuration settings
 │   ├── troubleshooting/           # Debugging, log collection, FAQ
 │   └── releases/                  # Release notes per signed build
 ├── patches/                       # Platform-specific patches (planned)
-├── scripts/                       # Build helpers (planned)
 ├── mkdocs.yml                     # MkDocs site configuration
 └── .github/workflows/             # CI/CD for GitHub Pages (planned)
 ```
