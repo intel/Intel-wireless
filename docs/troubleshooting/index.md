@@ -2,7 +2,7 @@
 
 ## Requesting Intel Support
 
-Intel provides official support when using an Intel® wireless module in both x86 and non-x86. Requests for assistance must be submitted through an Intel support forum that includes the following information:
+Intel provides official support when using an Intel® wireless module in both x86 and non-x86. Requests for assistance must be submitted through the [Intel Wireless Support Forum](https://community.intel.com/t5/Wireless/bd-p/wireless) that includes the following information:
 
 - Issue symptoms
 - Steps to reproduce the issue
