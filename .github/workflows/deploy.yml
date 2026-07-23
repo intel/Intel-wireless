@@ -3,7 +3,7 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - bringup  # Change to 'main' when ready to go live
+      - main
 
 permissions:
   contents: read

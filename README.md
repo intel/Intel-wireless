@@ -24,8 +24,8 @@ Full documentation is available at: **[intel.github.io/Intel-wireless](https://i
 Intel-wireless/
 ├── docs/                          # Documentation source (Markdown)
 │   ├── index.md                   # Home page
-│   ├── getting-started/           # Hardware requirements & verification
-│   ├── build/                     # Native build, cross-compilation
+│   ├── getting-started/           # Hardware requirements
+│   ├── build/                     # Integration guide, native build, cross-compilation
 │   ├── firmware/                  # Firmware installation
 │   ├── platforms/                 # Platform-specific guides
 │   │   ├── jetson/                #   NVIDIA Jetson specifics
@@ -35,7 +35,7 @@ Intel-wireless/
 │   └── releases/                  # Release notes per signed build
 ├── patches/                       # Platform-specific patches (planned)
 ├── mkdocs.yml                     # MkDocs site configuration
-└── .github/workflows/             # CI/CD for GitHub Pages (planned)
+└── .github/workflows/             # CI/CD for GitHub Pages
 ```
 
 ## Building the Documentation Locally

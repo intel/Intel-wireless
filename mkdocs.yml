@@ -5,6 +5,8 @@ site_description: Integration guides for Intel Wi-Fi on non-x86 platforms
 repo_url: https://github.com/intel/Intel-wireless
 repo_name: intel/Intel-wireless
 
+copyright: "© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries."
+
 theme:
   name: material
   features:
