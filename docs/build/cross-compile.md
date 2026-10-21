@@ -18,8 +18,10 @@ make ARCH=<arch> CROSS_COMPILE=<path to toolchain prefix> modules_prepare
 
 ## Step 2: Building the Backport Driver
 
+--8<-- "release.md:note"
+
 ```bash
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
+--8<-- "release.md:clone"
 cd backport-iwlwifi
 make ARCH=<arch> KLIB_BUILD=<path to the kernel source> defconfig-iwlwifi-public
 make ARCH=<arch> KLIB_BUILD=<path to the kernel source> CROSS_COMPILE=<path to toolchain> -j$(nproc)
@@ -30,9 +32,6 @@ Where:
 - `<arch>` — the symbol for the target processor. For example: `arm64`.
 - `<path to the kernel source>` — path to Linux kernel source.
 - `<path to toolchain>` — path and cross compile prefix in toolchain.
-
-!!! note "Selecting a Release"
-    By default, the git command clones the latest development branch. To use a specific release, check out the desired branch or tag after cloning: `git checkout <branch or tag>` (e.g., `git checkout release/core103`).
 
 ## Step 3: Deploying Modules to the Target
 
