@@ -30,7 +30,7 @@ To get this release, refer to [Getting the Latest Release](index.md#getting-the-
 Firmware fixes are delivered in the Intel® Wi-Fi firmware. Refer to [Firmware Installation](../firmware/installation.md).
 
 !!! note "Applies to Intel® Wi-Fi 7 BE200 Only"
-    The firmware changes in this release apply to the Intel® Wi-Fi 7 BE200 only. There are no firmware changes for the Intel® Wi-Fi 6E AX210 in this release.
+    The firmware changes in this release apply to the Intel® Wi-Fi 7 BE200 only.
 
 - Fixed a firmware assert (0x251A) in the data path.
 - Fixed a firmware assert (0x28B2) in the PHY.
