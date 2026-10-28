@@ -12,7 +12,7 @@ To get this release, refer to [Getting the Latest Release](index.md#getting-the-
 
 ## New Features and Enhancements
 
-- Device Tree support for Wi-Fi platform configuration on Intel® Wi-Fi 7 BE200, in addition to UEFI variables and ACPI. Device Tree provides SAR limits and 6 GHz AP type settings, and is used only when UEFI variables and ACPI methods do not provide the configuration. Refer to [Wi-Fi Configuration](../configuration/index.md).
+- Device Tree support for Wi-Fi platform configuration on Intel® Wi-Fi 7 BE200, in addition to UEFI variables and ACPI. Device Tree provides regulatory settings, and is used only when UEFI variables and ACPI methods do not provide the configuration. Refer to [Wi-Fi Configuration](../configuration/index.md).
 - 802.11be (Wi-Fi 7) enabled by default in China and South Korea when the platform BIOS does not provide DSM function 12.
 - 6 GHz (Wi-Fi 6E) enabled in Nigeria, Pakistan, and Cape Verde.
 - Pakistan 5.8 GHz band returned to the previous power profile, with 30 dBm EIRP up to 5875 MHz.
