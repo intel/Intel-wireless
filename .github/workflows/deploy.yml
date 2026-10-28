@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,7 +17,8 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Intel-provided runners in the intel org; GitHub-hosted runners in forks
+    runs-on: ${{ github.repository_owner == 'intel' && 'intel-' || '' }}ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,7 +43,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.repository_owner == 'intel' && 'intel-' || '' }}ubuntu-24.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
