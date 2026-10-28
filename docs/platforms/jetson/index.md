@@ -22,8 +22,10 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
 
 ### Building the Backport Driver
 
+--8<-- "release.md:note"
+
 ```bash
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
+--8<-- "release.md:clone"
 cd backport-iwlwifi
 make ARCH=arm64 KLIB_BUILD=<path to jetson kernel source> defconfig-iwlwifi-public
 make ARCH=arm64 KLIB_BUILD=<path to jetson kernel source> CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)

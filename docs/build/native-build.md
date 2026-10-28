@@ -4,17 +4,16 @@ This method involves compiling the backport driver from the source directly onto
 
 ## Clone and Build
 
+--8<-- "release.md:note"
+
 To clone and build the driver, run these commands:
 
 ```bash
-git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
+--8<-- "release.md:clone"
 cd backport-iwlwifi
 make defconfig-iwlwifi-public
 make -j$(nproc)
 ```
-
-!!! note "Selecting a Release"
-    By default, the git command clones the latest development branch. To use a specific release, check out the desired branch or tag after cloning: `git checkout <branch or tag>` (e.g., `git checkout release/core103`).
 
 ## Install
 

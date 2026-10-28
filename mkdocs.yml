@@ -46,6 +46,18 @@ markdown_extensions:
       alternate_style: true
   - admonition                  # Note/warning/tip boxes
   - pymdownx.details            # Collapsible admonitions
+  - pymdownx.snippets:          # Shared content (latest release) from includes/
+      base_path: [includes]
+      check_paths: true
+
+# Allow docs-root absolute links (/releases/...) in shared snippets
+validation:
+  links:
+    absolute_links: relative_to_docs
+
+# Rebuild on snippet changes during `mkdocs serve`
+watch:
+  - includes
 
 plugins:
   - search                      # Built-in instant search
@@ -64,6 +76,9 @@ nav:
     - NVIDIA Jetson: platforms/jetson/index.md
     - Canonical Ubuntu (DKMS): platforms/canonical-ubuntu.md
   - Wi-Fi Configuration: configuration/index.md
+  - Releases:
+    - Overview: releases/index.md
+    - core24.80 Release Notes: releases/core24.80.md
   - Troubleshooting:
     - Debugging Guide: troubleshooting/index.md
     - FAQ: troubleshooting/faq.md
